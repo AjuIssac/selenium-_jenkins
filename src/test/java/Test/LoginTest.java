@@ -13,7 +13,7 @@ public class LoginTest extends BaseTest {
 		
 		LoginPage x=new LoginPage(driver);
 		
-		x.enteruname();
+		x.enteruname(driver);
 		x.enterpass();
 		x.clciklogin(); 
 	

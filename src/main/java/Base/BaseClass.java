@@ -5,24 +5,23 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-public class BaseTest {
-	
-	protected WebDriver driver;
-	 
+public class BaseClass {
+
+	WebDriver driver;
 	@BeforeMethod
+	
 	public void setup() {
-		
+		//WebDriverManager.chromedriver().setup();
 		driver=new ChromeDriver();
-		
-		driver.get("https://piettro.cloudmlmdemo.com/auth/login");
+		driver.get("https://www.google.com/");
 	}
 	
-	 @AfterMethod
-	 
-	 public void tear() {
-		 if(driver!=null) {
-			 driver.quit();
-		 }
-	 }
-
+	@AfterMethod
+	
+	public void teardown() {
+		
+		driver.close();
+	
+		
+	}
 }
